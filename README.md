@@ -48,12 +48,26 @@ Thoth is a comprehensive QA automation agent that generates production-ready tes
 
 ### Installation
 
+**Option 0: Let AI Agent Install (Recommended for Claude Code Users)**
+
+If you're using Claude Code or another AI agent:
+
+```
+1. Navigate to your project directory
+2. Give Claude this repo URL: https://github.com/Franz-James-Kaba/thoth
+3. Ask: "Read .claude-install.md and install Thoth QA Agent"
+4. Answer the prompts (installation location, your name)
+5. Claude will handle the rest automatically!
+```
+
+The `.claude-install.md` file contains step-by-step instructions optimized for AI agents to autonomously install and configure Thoth.
+
 **Option 1: Clone Repository**
 
 ```bash
 # Clone to your project
 cd your-project
-git clone <this-repo-url> bmad/qa
+git clone <this-repo-url> thoth-qa
 
 # Create output folders
 mkdir -p qa-output/{test-plans,test-cases,automation,bug-reports,test-results}
@@ -62,14 +76,14 @@ mkdir -p qa-output/{test-plans,test-cases,automation,bug-reports,test-results}
 **Option 2: Download ZIP**
 
 1. Download ZIP from GitHub
-2. Extract to `your-project/bmad/qa/`
+2. Extract to `your-project/thoth-qa/`
 3. Create output folders (see above)
 
 **Option 3: Git Submodule**
 
 ```bash
 cd your-project
-git submodule add <this-repo-url> bmad/qa
+git submodule add <this-repo-url> thoth-qa
 git submodule update --init
 mkdir -p qa-output/{test-plans,test-cases,automation,bug-reports,test-results}
 ```
@@ -78,7 +92,7 @@ mkdir -p qa-output/{test-plans,test-cases,automation,bug-reports,test-results}
 
 ### Configuration
 
-Edit `bmad/qa/config.yaml`:
+Edit `thoth-qa/config.yaml` (or your chosen installation path):
 
 ```yaml
 # Update with your information
@@ -101,7 +115,7 @@ default_language: 'java'
 
 **Load Thoth:**
 ```
-Read file: bmad/qa/agents/thoth.md
+Read file: thoth-qa/agents/thoth.md
 ```
 
 **Use commands:**
@@ -118,7 +132,7 @@ Read file: bmad/qa/agents/thoth.md
 
 ```bash
 # 1. Load Thoth
-Read: bmad/qa/agents/thoth.md
+Read: thoth-qa/agents/thoth.md
 
 # 2. Start automation generation
 *generate-automation
@@ -145,7 +159,7 @@ Read: bmad/qa/agents/thoth.md
 ## 🏗️ Architecture
 
 ```
-bmad/qa/
+thoth-qa/
 ├── agents/
 │   ├── thoth.agent.yaml         # Source configuration
 │   └── thoth.md                 # Compiled agent (XML)
@@ -394,8 +408,8 @@ Version: 1.0.0
 **Ready to supercharge your QA automation? Install Thoth today!** 🚀
 
 ```bash
-git clone <repo-url> bmad/qa
-cd bmad/qa
+git clone <repo-url> thoth-qa
+cd thoth-qa
 # Update config.yaml
 # Load thoth.md
 # Run *generate-automation
