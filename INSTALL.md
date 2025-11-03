@@ -25,16 +25,25 @@ Complete QA automation module with Thoth agent and automation-generation workflo
 
 ### Step 1: Copy the QA Module
 
-Copy the entire `bmad/qa/` folder to your target project:
+Copy the entire module folder to your target project. You can choose any location - here are some popular options:
 
 ```bash
-# Example: Copy to new project
-cp -r bmad/qa /path/to/your-project/bmad/qa
+# Option 1: Copy to project root as 'thoth-qa' (Recommended)
+cp -r qa /path/to/your-project/thoth-qa
+
+# Option 2: Copy to '.claude' directory (if using Claude Code)
+cp -r qa /path/to/your-project/.claude/thoth-qa
+
+# Option 3: Copy to 'tools' directory
+cp -r qa /path/to/your-project/tools/thoth-qa
+
+# Option 4: Use your own custom location
+cp -r qa /path/to/your-project/your-custom-folder/thoth-qa
 ```
 
 **What gets copied:**
 ```
-bmad/qa/
+thoth-qa/
 ├── agents/
 │   ├── thoth.agent.yaml         # Source YAML
 │   └── thoth.md                 # Compiled agent (ready to use)
@@ -50,6 +59,8 @@ bmad/qa/
 └── README.md                     # Module overview
 ```
 
+**Note:** Throughout this guide, we use `thoth-qa` as the directory name. If you chose a different location or name, replace `thoth-qa` with your actual path in all commands below.
+
 ---
 
 ### Step 2: Create Output Directories
@@ -64,7 +75,7 @@ mkdir -p qa-output/{test-plans,test-cases,automation,bug-reports,test-results}
 **Directory structure:**
 ```
 your-project/
-├── bmad/qa/                      # QA module (copied)
+├── thoth-qa/                      # QA module (copied)
 └── qa-output/                    # Output folders (created)
     ├── test-plans/
     ├── test-cases/
@@ -77,7 +88,7 @@ your-project/
 
 ### Step 3: Customize Configuration
 
-Edit `bmad/qa/config.yaml` for your project:
+Edit `thoth-qa/config.yaml` for your project:
 
 ```yaml
 # Update these values:
@@ -102,10 +113,10 @@ default_language: 'java'
 Check that all files are in place:
 
 ```bash
-# From your project root
-ls -la bmad/qa/agents/thoth.md              # Should exist
-ls -la bmad/qa/workflows/automation-generation/workflow.yaml  # Should exist
-ls -la bmad/qa/config.yaml                  # Should exist
+# From your project root (adjust 'thoth-qa' to your chosen directory name)
+ls -la thoth-qa/agents/thoth.md              # Should exist
+ls -la thoth-qa/workflows/automation-generation/workflow.yaml  # Should exist
+ls -la thoth-qa/config.yaml                  # Should exist
 ls -la qa-output/automation/                # Should exist (empty)
 ```
 
@@ -118,7 +129,7 @@ ls -la qa-output/automation/                # Should exist (empty)
 Read the agent file to activate Thoth:
 
 ```
-Read file: bmad/qa/agents/thoth.md
+Read file: thoth-qa/agents/thoth.md
 ```
 
 Then use any command:
@@ -138,7 +149,7 @@ Create a slash command for quick access:
 ```bash
 # Copy to commands folder
 mkdir -p .claude/commands
-cp bmad/qa/agents/thoth.md .claude/commands/thoth.md
+cp thoth-qa/agents/thoth.md .claude/commands/thoth.md
 ```
 
 Then use:
@@ -155,7 +166,7 @@ Let's generate your first automated test:
 
 **1. Load Thoth:**
 ```
-Read: bmad/qa/agents/thoth.md
+Read: thoth-qa/agents/thoth.md
 ```
 
 **2. Start automation generation:**
@@ -202,7 +213,7 @@ qa-output/automation/YourTestName.java
 
 ### Update Output Locations
 
-Edit `bmad/qa/config.yaml`:
+Edit `thoth-qa/config.yaml`:
 
 ```yaml
 # Change where files are generated
@@ -253,16 +264,16 @@ mkdir -p qa-output/{test-plans,test-cases,automation,bug-reports,test-results}
 
 ### Issue: Config variables not loading
 
-**Solution:** Verify `config.yaml` exists at `bmad/qa/config.yaml` and has proper structure
+**Solution:** Verify `config.yaml` exists at `thoth-qa/config.yaml` and has proper structure
 
 ---
 
 ## 📖 Documentation
 
-- **Thoth Agent**: See `bmad/qa/agents/thoth.md`
-- **Automation Workflow**: See `bmad/qa/workflows/automation-generation/README.md`
-- **Workflow Details**: See `bmad/qa/workflows/automation-generation/instructions.md`
-- **Validation**: See `bmad/qa/workflows/automation-generation/checklist.md`
+- **Thoth Agent**: See `thoth-qa/agents/thoth.md`
+- **Automation Workflow**: See `thoth-qa/workflows/automation-generation/README.md`
+- **Workflow Details**: See `thoth-qa/workflows/automation-generation/instructions.md`
+- **Validation**: See `thoth-qa/workflows/automation-generation/checklist.md`
 
 ---
 
@@ -308,7 +319,7 @@ For issues or questions:
 
 Before using in a new project:
 
-- [ ] Copied `bmad/qa/` folder to project
+- [ ] Copied `thoth-qa/` folder to project
 - [ ] Created `qa-output/` folders (5 subfolders)
 - [ ] Updated `config.yaml` with your name
 - [ ] Verified paths in `config.yaml`
