@@ -1,0 +1,19 @@
+# Bug Reporting Workflow Configuration
+name: "bug-reporting"
+description: "Create detailed bug report with reproduction steps and evidence"
+author: "Franzy"
+
+config_source: "{project-root}/bmad/qa/config.yaml"
+output_folder: "{config_source}:output_folder"
+bug_reports_folder: "{config_source}:bug_reports_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/bmad/qa/workflows/bug-reporting"
+template: "{installed_path}/template.md"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+default_output_file: "{bug_reports_folder}/BUG-{bug_id}-{date}.md"
+standalone: true

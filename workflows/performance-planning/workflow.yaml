@@ -1,0 +1,13 @@
+name: "performance-planning"
+description: "Create performance testing strategy and plan"
+author: "Franzy"
+config_source: "{project-root}/bmad/qa/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+installed_path: "{project-root}/bmad/qa/workflows/performance-planning"
+template: false
+instructions: "{installed_path}/instructions.md"
+default_output_file: "{output_folder}/performance-plan-{date}.md"
+standalone: true

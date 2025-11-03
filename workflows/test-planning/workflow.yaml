@@ -1,0 +1,19 @@
+# Test Planning Workflow Configuration
+name: "test-planning"
+description: "Create comprehensive test plan with risk assessment and strategy"
+author: "Franzy"
+
+config_source: "{project-root}/bmad/qa/config.yaml"
+output_folder: "{config_source}:output_folder"
+test_plans_folder: "{config_source}:test_plans_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/bmad/qa/workflows/test-planning"
+template: "{installed_path}/template.md"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+default_output_file: "{test_plans_folder}/{project_name}-test-plan.md"
+standalone: true

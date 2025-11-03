@@ -1,0 +1,13 @@
+name: "accessibility-guidance"
+description: "Provide accessibility testing guidance and WCAG compliance recommendations"
+author: "Franzy"
+config_source: "{project-root}/bmad/qa/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+installed_path: "{project-root}/bmad/qa/workflows/accessibility-guidance"
+template: false
+instructions: "{installed_path}/instructions.md"
+default_output_file: "{output_folder}/accessibility-guidance-{date}.md"
+standalone: true
