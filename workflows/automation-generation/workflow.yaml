@@ -1,0 +1,29 @@
+# Automation Generation Workflow Configuration
+name: "automation-generation"
+description: "Generate automated test code with framework selection and hybrid selector approach (Selenium/Selenide/Cypress/Appium/RestAssured)"
+author: "Franzy"
+
+# Critical variables load from config_source
+config_source: "{project-root}/bmad/qa/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+# QA-specific config variables
+automation_folder: "{config_source}:automation_folder"
+default_test_framework: "{config_source}:default_test_framework"
+default_assertion_framework: "{config_source}:default_assertion_framework"
+default_language: "{config_source}:default_language"
+
+# Module path and component files
+installed_path: "{project-root}/bmad/qa/workflows/automation-generation"
+template: "{installed_path}/template.md"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+default_output_file: "{automation_folder}/{test_name}.{file_extension}"
+
+# Invocation control
+standalone: true
